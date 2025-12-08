@@ -11,7 +11,7 @@ on :
 # jobs to do on push
 jobs:
     my-first-stage:
-      runs-on: ubuntu_latest
+      runs-on: ubuntu-24.04
     # ubuntu provisioned by github itself for our runtime enviornment
       steps:
       #metadata for a step 
@@ -22,7 +22,7 @@ jobs:
         run: whoami
         
     my-second-job:
-      runs-on: ubuntu_latest
+      runs-on: ubuntu-24.04
       steps:
         - name : list files workflow
           run: ls
