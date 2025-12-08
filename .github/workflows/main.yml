@@ -1,0 +1,31 @@
+
+name : my-linux-cmd-executing-workflow
+on :
+  #set manual triggers
+  workflow_dispatch:
+  #set push triggers
+  push:
+    # on push do thisn trigger on to main branch!
+    branches:
+    - main
+# jobs to do on push
+jobs:
+    my-first-stage:
+      runs-on: ubuntu_latest
+    # ubuntu provisioned by github itself for our runtime enviornment
+      steps:
+      #metadata for a step 
+      #- (any)name for a step
+      - name : execute pwd 
+        run: pwd
+      - name: execute whoami
+        run: whoami
+        
+    my-second-job:
+      runs-on: ubuntu_latest
+      steps:
+        - name : list files workflow
+          run: ls
+  
+  
+  
